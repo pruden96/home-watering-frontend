@@ -10,7 +10,7 @@ const SideMenu: React.FC = () => {
         <div
             className={displayMenu ? styles.menuOpened : styles.menuClosed}
             style={{
-                width: "50vw",
+                width: "60vw",
                 height: "100%",
                 padding: "0",
                 margin: "0",
@@ -35,33 +35,7 @@ const SideMenu: React.FC = () => {
             >
                 <MenuItem title="🏠 Home" path="/" />
                 <MenuItem title="📅 Tasks" path="/tasks" />
-
-                {/* <li className={styles.menuItems}>
-                    <NavLink
-                        to="/"
-                        onClick={setDisplay}
-                        className={styles.menuNavLink}
-                        style={({ isActive }) => ({
-                            color: isActive ? "black" : "wheat",
-                            backgroundColor: isActive ? "wheat" : "#333333",
-                        })}
-                    >
-                        🏠 Home
-                    </NavLink>
-                </li>
-                <li className={styles.menuItems}>
-                    <NavLink
-                        to="/tasks"
-                        onClick={setDisplay}
-                        className={styles.menuNavLink}
-                        style={({ isActive }) => ({
-                            color: isActive ? "black" : "wheat",
-                            backgroundColor: isActive ? "wheat" : "#333333",
-                        })}
-                    >
-                        📅 Tasks
-                    </NavLink>
-                </li> */}
+                <MenuItem title="⚙️ Settings" path="/settings" />
             </ul>
         </div>
     );

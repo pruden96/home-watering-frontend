@@ -1,4 +1,5 @@
 import React from "react";
+import ActionButton from "../components/ActionButton";
 
 // Component definition using React + Typescript -> React.FC | FC = Function Component
 const Home: React.FC = () => {
@@ -10,7 +11,6 @@ const Home: React.FC = () => {
                 estado actual y activar el riego manual.
             </p>
 
-            {/* Espacio para mostrar el estado actual (Conectado/Desconectado, Humedad, etc.) */}
             <section
                 style={{
                     border: "1px solid #ccc",
@@ -32,6 +32,8 @@ const Home: React.FC = () => {
                 >
                     Activar Riego Manual (5 min)
                 </button>
+                <ActionButton title="Guardar" type="submit" />
+                <ActionButton title="Cancelar" type="cancel" />
             </section>
         </div>
     );

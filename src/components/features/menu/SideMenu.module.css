@@ -31,7 +31,7 @@
 }
 
 .menuClosed {
-    transform: translateX(-55vw);
+    transform: translateX(-60vw);
 }
 
 .menuItems {

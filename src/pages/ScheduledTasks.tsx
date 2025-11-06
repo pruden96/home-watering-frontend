@@ -9,7 +9,6 @@ const ScheduledTask: React.FC = () => {
                 cada zona.
             </p>
 
-            {/* Espacio para la tabla o formulario de programación */}
             <section
                 style={{
                     border: "1px solid #ccc",

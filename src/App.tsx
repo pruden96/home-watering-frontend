@@ -5,15 +5,16 @@ import MainHeader from "./components/MainHeader";
 import SideMenu from "./components/SideMenu";
 import Home from "./pages/Home";
 import ScheduledTasks from "./pages/ScheduledTasks";
+import Settings from "./pages/Settings";
 
 function App() {
     return (
-        // 3. BrowserRouter envuelve toda la aplicación para habilitar el enrutamiento
+        // BrowserRouter envuelve toda la aplicación para habilitar el enrutamiento
         <Router>
             <header>
                 <MainHeader />
             </header>
-            {/* <Navigation /> Incluimos la barra de navegación */}
+
             <div>
                 <SideMenu />
             </div>
@@ -21,6 +22,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/tasks" element={<ScheduledTasks />} />
+                    <Route path="/settings" element={<Settings />} />
                 </Routes>
             </main>
         </Router>

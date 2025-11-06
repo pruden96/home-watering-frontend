@@ -22,7 +22,6 @@ const Navigation: React.FC = () => {
                 }}
             >
                 <li>
-                    {/* Link es el componente de React Router para navegar sin recargar la página */}
                     <Link
                         to="/"
                         style={{

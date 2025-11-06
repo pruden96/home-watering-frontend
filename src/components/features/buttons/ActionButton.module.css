@@ -1,0 +1,15 @@
+button {
+    background-color: transparent;
+}
+
+button.submitType:active {
+    transform: translateY(2px);
+    background-color: #1a97eb;
+    transition: transform 0.3s ease-in-out;
+}
+
+button.cancelType:active {
+    transform: translateY(2px);
+    background-color: #ff4a4d;
+    transition: transform 0.3s ease-in-out;
+}
