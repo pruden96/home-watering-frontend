@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+## 🪴 Automated Home Irrigation System - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code for the user interface (Frontend) of the Automated Home Watering System. Built with **React**, **Vite**, and **TypeScript**, this application provides a responsive control panel to manage the watering schedule, monitor the system, and configure hardware connection settings.
 
-Currently, two official plugins are available:
+### 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application is structured around three main views:
 
-## React Compiler
+-   **Home (Dashboard):**
+    -   View the current system status.
+    -   **Manual Irrigation:** Start and stop the water pump immediately.
+    -   Select the **duration** for the manual irrigation cycle.
+-   **Tasks (Schedules):**
+    -   Create, view, and manage **automated watering schedules**.
+    -   Set specific **days and times** for scheduled irrigation.
+-   **Settings:**
+    -   Configure connection parameters for the backend components.
+    -   Set the **IP address and Port** for the **Raspberry Pi API Server**.
+    -   Set the **IP address and Port** for the **ESP32** (direct control/status, if applicable).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ⚙️ Technologies
 
-## Expanding the ESLint configuration
+-   **Framework:** React
+-   **Build Tool:** Vite
+-   **Language:** TypeScript
+-   **Styling:** _[Add your styling library here, e.g., Tailwind CSS, Styled Components, etc.]_
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 💻 Local Development Setup
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+These instructions will get a copy of the project running on your local machine for development and testing purposes.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+#### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-   Node.js (LTS version recommended)
+-   npm (or Yarn/pnpm)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+#### Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1.  **Clone the repository:**
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    ```bash
+    git clone https://github.com/pruden96/home-watering-frontend
+    cd watering-ui
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Configure API Endpoints:**
+    You may need to update the environment variables or configuration files (e.g., `.env` file) to point to your local Raspberry Pi API server.
+
+    > **Note:** The application expects the **Raspberry Pi API Server** to be running for task scheduling and system configuration.
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+The application will now be running locally, typically accessible at `http://localhost:5173` (or the port specified by Vite).
+
+### 🛑 Important Note on Deployment
+
+This project is currently designed and tested for **local development (`npm run dev`) only**. The next phase will involve configuring a secure deployment strategy. **Do not deploy this application publicly** until all security measures and backend validation are complete.
+
+### 🤝 Contribution
+
+This is a personal project. Feel free to use the code as inspiration for your own smart home projects.
