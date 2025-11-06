@@ -1,8 +1,13 @@
 import styles from "./features/menu/SideMenu.module.css";
 import { useSideMenu } from "./features/menu/sidemenu.store";
 
-const MenuButton = () => {
+const MenuButton: React.FC = () => {
     const toggleMenu = useSideMenu((state) => state.toggleMenu);
+    const displayMenu = useSideMenu((state) => state.displayMenu);
+    const imgSrc = [
+        "./src/assets/right-arrow.png",
+        "./src/assets/menu-bar.png",
+    ];
 
     return (
         <button
@@ -16,10 +21,26 @@ const MenuButton = () => {
             onClick={toggleMenu}
         >
             <img
-                src="./src/assets/menu-bar.png"
+                src={imgSrc[0]}
                 alt="menu-icon"
+                className={
+                    displayMenu ? styles.activeImage : styles.inactiveImage
+                }
                 style={{
-                    width: "100%",
+                    transform: "rotate(180deg)",
+                    scale: "0.75",
+                    zIndex: "1",
+                }}
+            />
+
+            <img
+                src={imgSrc[1]}
+                alt="arrow-icon"
+                className={
+                    !displayMenu ? styles.activeImage : styles.inactiveImage
+                }
+                style={{
+                    zIndex: "2",
                 }}
             />
         </button>

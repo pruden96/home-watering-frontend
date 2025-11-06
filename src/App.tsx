@@ -1,8 +1,8 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 
-import MenuButton from "./components/MenuButton";
-import Navigation from "./components/Navigation";
+import MainHeader from "./components/MainHeader";
+import SideMenu from "./components/SideMenu";
 import Home from "./pages/Home";
 import ScheduledTasks from "./pages/ScheduledTasks";
 
@@ -11,25 +11,16 @@ function App() {
         // 3. BrowserRouter envuelve toda la aplicación para habilitar el enrutamiento
         <Router>
             <header>
-                <MenuButton />
+                <MainHeader />
             </header>
-            <Navigation /> {/* Incluimos la barra de navegación */}
+            {/* <Navigation /> Incluimos la barra de navegación */}
+            <div>
+                <SideMenu />
+            </div>
             <main style={{ padding: "20px" }}>
-                {/* 4. Routes define dónde se mostrarán los componentes de la vista */}
                 <Routes>
-                    {/* Route define una ruta específica: */}
-                    <Route path="/" element={<Home />} />{" "}
-                    {/* La ruta raíz (Home) */}
-                    <Route
-                        path="/scheduled-tasks"
-                        element={<ScheduledTasks />}
-                    />{" "}
-                    {/* La ruta de Tareas Programadas */}
-                    {/* Puedes añadir una ruta para un 404/No Encontrado si deseas: */}
-                    <Route
-                        path="*"
-                        element={<h1>404 | Página no encontrada</h1>}
-                    />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/tasks" element={<ScheduledTasks />} />
                 </Routes>
             </main>
         </Router>

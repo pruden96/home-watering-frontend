@@ -1,12 +1,50 @@
 .button {
     cursor: pointer;
     background: none;
+    position: relative;
+    border: none;
 }
 
-/* .button:hover {
-    scale: 1.1;
-} */
+.button img {
+    width: 100%; /* La imagen ocupa el 100% del botón */
+    height: 100%;
+    position: absolute; /* Para que las imágenes se superpongan */
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transición para rotación y opacidad de la imagen */
+}
 
 .button:active {
     transform: translateY(2px);
+}
+
+.imageActive {
+    opacity: 1;
+}
+
+.inactiveImage {
+    opacity: 0;
+}
+
+.menuOpened {
+    transform: translateX(-2vw);
+}
+
+.menuClosed {
+    transform: translateX(-55vw);
+}
+
+.menuItems {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+
+.menuNavLink {
+    text-decoration: none;
+    border: 1px solid wheat;
+    border-radius: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
