@@ -5,7 +5,6 @@ import MenuItem from "./MenuItem";
 
 const SideMenu: React.FC = () => {
     const displayMenu = useSideMenu((state) => state.displayMenu);
-    const setDisplay = useSideMenu((state) => state.toggleMenu);
 
     return (
         <div
