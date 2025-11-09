@@ -23,7 +23,7 @@ The application is structured around three main views:
 -   **Framework:** React
 -   **Build Tool:** Vite
 -   **Language:** TypeScript
--   **Styling:** _[Add your styling library here, e.g., Tailwind CSS, Styled Components, etc.]_
+-   **Styling:** Css
 
 ### 💻 Local Development Setup
 
@@ -40,7 +40,7 @@ These instructions will get a copy of the project running on your local machine 
 
     ```bash
     git clone https://github.com/pruden96/home-watering-frontend
-    cd watering-ui
+    cd home-watering-frontend
     ```
 
 2.  **Install dependencies:**

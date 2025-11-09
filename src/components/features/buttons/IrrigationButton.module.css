@@ -1,0 +1,105 @@
+.irrigationButton {
+    width: 128px;
+    height: 128px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+.irrigationButton:disabled {
+    cursor: not-allowed;
+}
+
+.irrigationButton:active {
+    transform: translateY(2px);
+}
+
+.irrigationButton figure {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 3px solid #59eb6a;
+    justify-self: center;
+    margin: 0;
+    /* Estilos para la animación de llenado */
+    /* IMPORTANTE: Oculta el gradiente que se sale del círculo */
+    overflow: hidden;
+
+    /* Ayuda a centrar la imagen hija */
+    /* display: grid;
+    place-items: center; */
+
+    /* --- CONFIGURACIÓN DEL LLENADO --- */
+
+    /* 1. Creamos un fondo de gradiente. Es 50% aqua y 50% transparente */
+    /* Usamos 'to top' para que el color venga de abajo */
+    background-image: linear-gradient(
+        to top,
+        rgb(6, 114, 156) 50%,
+        transparent 50%
+    );
+
+    /* 2. Hacemos que el fondo sea el DOBLE de alto que el contenedor */
+    background-size: 100% 200%;
+    background-repeat: no-repeat;
+
+    /* 3. Estado inicial: La posición del fondo está "abajo" (100%), */
+    /* mostrando solo la parte transparente del gradiente. */
+    background-position: 0 0%; /* 'bottom' */
+
+    /* Esto previene una transición al reiniciar, queremos una animación */
+    transition: background-position 0s;
+}
+
+.irrigationButton img {
+    aspect-ratio: 1;
+    padding-top: 0.5rem;
+    width: 50%;
+}
+
+.irrigationButton h2 {
+    position: absolute;
+    width: 81px;
+    margin: 0;
+    padding: 0;
+    top: 84px;
+    left: 23px;
+    border: 2px solid #59eb6a;
+    border-radius: 25px;
+    background-color: #333333;
+}
+
+/* --- Keyframes de la Animación --- */
+@keyframes fillUp {
+    from {
+        background-position: 0 0%; /* Empieza vacío (abajo) */
+    }
+    to {
+        background-position: 0 100%; /* Termina lleno (arriba) */
+    }
+}
+
+/* --- CLASES DE ESTADO (controladas por React) --- */
+
+/* 1. Clase .filling (mientras se llena) */
+.figure.filling {
+    animation-name: fillUp;
+
+    /* 4. ¡Aquí usamos la variable de React! */
+    animation-duration: var(--fill-duration);
+
+    animation-timing-function: linear; /* Velocidad constante */
+    animation-fill-mode: forwards; /* Mantiene el estado final (lleno) */
+}
+
+/* 2. Clase .full (cuando está lleno) */
+.figure.full {
+    /* 5. Mantiene el estado "lleno" (posición arriba) */
+    /* Esto es crucial para que no se "vacíe" de golpe */
+    /* cuando la clase .filling desaparece. */
+    background-position: 0 0%;
+    transition: none;
+}
