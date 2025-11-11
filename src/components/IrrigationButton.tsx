@@ -6,13 +6,41 @@ interface IrrigationProps {
     duration: number;
 }
 
+interface IrrigationBody {
+    valveId: number;
+    duration: number;
+    status: number;
+}
+
 const IrrigationButton: React.FC<IrrigationProps> = ({ duration }) => {
     const [isFilling, setIsFilling] = useState<boolean>(false);
     const [isFull, setIsFull] = useState<boolean>(false);
 
-    const durationSeconds = duration * 60;
+    const durationSeconds = duration * 1;
 
-    const handleClick = () => {
+    const body: IrrigationBody = {
+        valveId: 1,
+        duration: duration,
+        status: 1,
+    };
+
+    const startIrrigation = async (): Promise<void> => {
+        const response = await fetch("http://192.168.3.95:80/data", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(body),
+        });
+        if (!response.ok) {
+            alert("Problem connectiing with ESP32");
+            return;
+        }
+        const data = await response.json();
+        console.log(data);
+    };
+
+    const handleClick = async () => {
         // No hacer nada si la animación ya está corriendo
         if (isFilling) return;
 
@@ -22,6 +50,7 @@ const IrrigationButton: React.FC<IrrigationProps> = ({ duration }) => {
         } else {
             // Si está vacío, empieza a llenar
             setIsFilling(true);
+            await startIrrigation();
         }
     };
 

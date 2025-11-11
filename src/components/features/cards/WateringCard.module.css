@@ -1,0 +1,35 @@
+.wateringCard {
+    aspect-ratio: 2;
+    width: 100%;
+    border: 3px solid wheat;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.leftContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scheduleButton {
+    border: none;
+    cursor: pointer;
+}
+
+.wateringCardValve img {
+    width: 120px;
+    aspect-ratio: 1;
+}
+
+.scheduleButton img {
+    width: 50px;
+    aspect-ratio: 1;
+}
+
+.scheduleButton:active {
+    transform: translateY(2px);
+}

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ActionButton from "../components/ActionButton";
 import styles from "../components/features/forms/Forms.module.css";
-import IrrigationButton from "../components/IrrigationButton";
 interface FormData {
     ipAddress: string;
     port: string;
@@ -94,7 +93,8 @@ const Settings: React.FC = () => {
                 </form>
             </section>
             <div>
-                <IrrigationButton duration={0.3} />
+                {/* <IrrigationButton duration={0.3} /> */}
+                {/* <IrrigationTimeModal /> */}
             </div>
         </div>
     );

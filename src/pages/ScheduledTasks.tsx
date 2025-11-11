@@ -36,6 +36,7 @@ const ScheduledTask: React.FC = () => {
                     Añadir Nueva Programación
                 </button>
             </section>
+            {/* <WateringCard /> */}
         </div>
     );
 };

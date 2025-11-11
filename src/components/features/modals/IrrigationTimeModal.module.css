@@ -1,0 +1,72 @@
+.irrigationTimeModal {
+    width: 90%;
+    aspect-ratio: 2;
+    border: 2px solid wheat;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+    background-color: #333333;
+    justify-self: center;
+}
+
+.errorText {
+    text-align: center;
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+
+.errorText p {
+    margin: 0;
+    padding: 0;
+}
+
+.backdrop {
+    position: fixed; /* Ocupa toda la pantalla, sin importar el scroll */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    /* El color oscuro semi-transparente */
+    background-color: rgba(0, 0, 0, 0.6);
+
+    /* Para centrar el modal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Asegura que esté por encima de todo */
+    z-index: 1000;
+}
+
+.inputContainer {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: wheat;
+}
+
+.inputContainer input {
+    width: 20%;
+    height: 5vh;
+    font-size: 40px;
+    text-align: center;
+}
+
+.inputContainer p {
+    font-weight: bold;
+    font-size: 40px;
+    margin: 2vh;
+}
+
+.buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2vh;
+}

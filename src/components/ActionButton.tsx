@@ -4,12 +4,14 @@ import styles from "./features/buttons/ActionButton.module.css";
 interface ActionButtonProps {
     title: string;
     type: string;
+    isCliackable?: boolean;
     onClick?: () => void;
 }
 
 const ActionButton: React.FC<ActionButtonProps> = ({
     title,
     type,
+    isCliackable,
     onClick,
 }) => {
     return (
@@ -26,7 +28,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                cursor: "pointer",
+                cursor: isCliackable ? "pointer" : "not-allowed",
                 fontSize: "1.5rem",
                 fontWeight: "bold",
             }}
